@@ -72,10 +72,12 @@
     ],
     "root": true
   },
-  "dependencies": {},
+  "dependencies": {
+    "@sveltejs/kit": "next",
+    "svelte": "^3.34.0"
+  },
   "devDependencies": {
     "@sveltejs/adapter-node": "next",
-    "@sveltejs/kit": "next",
     "@typescript-eslint/eslint-plugin": "^4.19.0",
     "@typescript-eslint/parser": "^4.19.0",
     "del-cli": "^3.0.1",
@@ -86,7 +88,6 @@
     "prettier": "~2.2.1",
     "prettier-plugin-svelte": "^2.2.0",
     "sort-package-json": "^1.50.0",
-    "svelte": "^3.34.0",
     "svelte-check": "^2.0.0",
     "svelte-preprocess": "^4.0.0",
     "tslib": "^2.0.0",
