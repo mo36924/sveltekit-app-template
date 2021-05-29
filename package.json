@@ -1,0 +1,95 @@
+{
+  "name": "sveltekit-app-template",
+  "version": "0.0.1",
+  "private": true,
+  "description": "sveltekit-app-template",
+  "keywords": [],
+  "homepage": "https://github.com/mo36924/sveltekit-app-template#readme",
+  "bugs": {
+    "url": "https://github.com/mo36924/sveltekit-app-template/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mo36924/sveltekit-app-template.git"
+  },
+  "license": "MIT",
+  "author": "mo36924",
+  "type": "module",
+  "main": "./build/index.js",
+  "scripts": {
+    "start": "node build",
+    "dev": "run-p dev:*",
+    "dev:check": "svelte-check --tsconfig ./tsconfig.json --watch",
+    "dev:svelte-kit": "svelte-kit dev",
+    "build": "run-s clean lint format check build:*",
+    "build:svelte-kit": "svelte-kit build",
+    "preview": "svelte-kit preview",
+    "check": "svelte-check --tsconfig ./tsconfig.json",
+    "clean": "del .svelte-kit build",
+    "format": "run-s format:*",
+    "format:package-json": "sort-package-json",
+    "format:prettier": "prettier --write --plugin-search-dir=. .",
+    "lint": "run-s lint:*",
+    "lint:eslint": "eslint --ignore-path .gitignore --fix ."
+  },
+  "prettier": {
+    "printWidth": 120,
+    "trailingComma": "all"
+  },
+  "eslintConfig": {
+    "env": {
+      "browser": true,
+      "es2017": true,
+      "node": true
+    },
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+      "ecmaVersion": 2019,
+      "sourceType": "module"
+    },
+    "settings": {
+      "svelte3/typescript": true
+    },
+    "plugins": [
+      "svelte3",
+      "@typescript-eslint"
+    ],
+    "extends": [
+      "eslint:recommended",
+      "plugin:@typescript-eslint/recommended",
+      "prettier"
+    ],
+    "overrides": [
+      {
+        "files": [
+          "*.svelte"
+        ],
+        "processor": "svelte3/svelte3"
+      }
+    ],
+    "ignorePatterns": [
+      "*.cjs"
+    ],
+    "root": true
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@sveltejs/adapter-node": "next",
+    "@sveltejs/kit": "next",
+    "@typescript-eslint/eslint-plugin": "^4.19.0",
+    "@typescript-eslint/parser": "^4.19.0",
+    "del-cli": "^3.0.1",
+    "eslint": "^7.22.0",
+    "eslint-config-prettier": "^8.1.0",
+    "eslint-plugin-svelte3": "^3.2.0",
+    "npm-run-all": "^4.1.5",
+    "prettier": "~2.2.1",
+    "prettier-plugin-svelte": "^2.2.0",
+    "sort-package-json": "^1.50.0",
+    "svelte": "^3.34.0",
+    "svelte-check": "^2.0.0",
+    "svelte-preprocess": "^4.0.0",
+    "tslib": "^2.0.0",
+    "typescript": "^4.0.0"
+  }
+}
